@@ -10,8 +10,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render('signup')
-    // res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render('signup')   
   });
 
   app.get("/login", (req, res) => {
@@ -19,8 +18,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.render('login')
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render('login')  
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -29,6 +27,9 @@ module.exports = function(app) {
     res.render('members', {
       user: req.user
     })
-    // res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
+  app.get("/gamePlay", (req, res) => {
+    // If the user already has an account send them to the members page
+    res.render('gamePlay')   
   });
 };
