@@ -5,20 +5,27 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  app.get("/", (req, res) => {
+// Home page is home.handlebars, not signup.handlebars
+// we have to navigate to  signup page and login pages by clicking the button
+  app.get("/", (req, res)=>{
+    res.render("home");
+  });
+  
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
-    }
-    res.render('signup')   
+    };
+    res.render('signup');   
   });
+
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
-    }
-    res.render('login')  
+    };
+    res.render('login');  
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -26,10 +33,13 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.render('members', {
       user: req.user
-    })
+    });
   });
-  app.get("/gamePlay", (req, res) => {
+  app.get("/gamePlay", isAuthenticated, (req, res) => {
     // If the user already has an account send them to the members page
-    res.render('gamePlay')   
+    // if a user is signup or logged in then render user to gamePlay page and user isAuthenticated added
+    res.render('gamePlay',{
+      user: req.user
+    });   
   });
 };

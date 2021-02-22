@@ -14,6 +14,24 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/currentScore",(req, res)=>{
+    var data = {
+      currentScore: req.body.currentScore,
+      highScore: req.body.highScore
+    }
+    console.log(data)
+    db.create({
+      currentScore: req.body.currentScore,
+      highScore: req.body.highScore
+    })
+    .then(res=>{
+      console.log(res.body)
+    })
+    .catch(err=>{
+      res.status(401).json(err);
+    })
+  })
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -52,4 +70,12 @@ module.exports = function(app) {
       });
     }
   });
+  
+  app.get("/gamePlay", (req, res)=>{
+    db.gamePlay.findAll({})
+    .then(result =>{
+      res.json(result)
+    })
+    .catch(err =>{throw err})
+  })
 };
