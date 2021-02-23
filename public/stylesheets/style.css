@@ -29,11 +29,9 @@ border-radius:10px ;
 
 .loginBtn {
   margin-top: 20px;
-
 }
 .loginBtn a {
   font-size: 20px;
-
 }
 .mylogin {
   height: 80px;
@@ -75,7 +73,6 @@ height: 150px;
   border: 1px gray solid;
   padding: 40px;
   border-radius:10px ;
-  /* margin: 0 auto; */
   margin-top: 20px;
 }
 
@@ -92,7 +89,89 @@ height: 150px;
   border-radius:10px ;
 
 }
+.navbar-header,.navbar-brand {
+  background-color: wheat;
+  float: right;
+
+}
+
 .div4 a {
   padding: 20px;
   margin-top: 20px;
 }
+.questions {
+border: 2px gray solid;
+margin: 0 auto;
+margin-top: 40px;
+width: 80vw;
+padding: 20px;
+}
+.card {
+  border: 2px gray solid;
+  padding: 20px;
+}
+.ansAlert1 {
+  background-color: lightblue;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px gray solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+    /* display: flex; */
+  };
+  .div1, .div2, .div3, .div4 {
+    display: flex;
+    font-size: 20px;
+    margin-left: 20px;
+    margin: 20px;
+  };
+
+  .loginBtn {
+    display: flex;
+  }
+  .mylogin {
+    font-size: 5px;
+    display: flex;
+
+  }
+
+  .MyImg img, .bio h4, .div1 h1 {
+    font-size: small;
+  }
+  /* .div1 h1 {
+    font-size: small;
+    display: flex;
+
+  } */
+  /* .bio h4 {
+    font-size: small;
+    display: flex;
+  } */
+  
+  .div4 a {
+    font-size: 10px;
+
+
+  }
+  #single, #double, #category,#subAns {
+  display: flex;
+  font-size: 20px;
+  margin-left: 20px;
+  margin: 20px;
+  }
+  h1 {
+    margin-left: 20px;
+  }
+  
+  
+/* [class*="col-"] {
+  width: 100%;
+} */
+};
+
