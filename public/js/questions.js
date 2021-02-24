@@ -7,29 +7,59 @@ $(document).ready(() => {
     }).then(data => {
       console.log(data);
       answer = (data[0].answer);
-      $("#displayQ").text(data[0].question);
-    });
+      var divCard = $("<div>");
+      divCard.attr("class", "card");
+      var hEl = $("<h5>");
 
-    $("#subAns").on("click", () => {
-      var myAnswer = $("#answer")
-      var myAnswerVal = (myAnswer.val().trim())
+      hEl.attr("class", "card-header");
+      hEl.attr("id", "displayQ");
+
+      hEl.text(data[0].question);
+      console.log(data[0].question)
+
+      var divCb = $("<div>");
+      divCb.attr("class", "card-body");
+      var inputEl = $("<input>");
+      inputEl.attr("class", "card-title");
+      inputEl.attr("id", "answer");
+      var btnEl = $("<button>");
+      btnEl.attr("id", "subAns");
+      btnEl.attr("class", "btn-primary");
+      btnEl.text("Answer")
+      var ansDiv = $("<div>");
+      ansDiv.attr("class", "ansAlert");
+
+      var mainDiv = divCb.append(inputEl, btnEl, ansDiv);
+
+      divCard.append(hEl, mainDiv);
+
+      $(".questionsX").append(divCard);
+
+      $("#subAns").on("click", () => {
+        // $(".questionsX").text(" ");
+
+        var myAnswer = $("#answer");
+        var myAnswerVal = (myAnswer.val().trim());
+
+        console.log(myAnswerVal)
 
         if (answer === myAnswerVal) {
-          alert("Correct " + answer + " is equal to " + myAnswerVal);
-         var xyz =  $("<div>").text("Correct " + answer + " is equal to " + myAnswerVal);
-         xyz.attr("class", "ansAlert1")
-         $(".ansAlert").append(xyz)
+          // alert("Correct " + answer + " is equal to " + myAnswerVal);
+          var xyz = $("<div>").text("Correct " + answer + " is equal to " + myAnswerVal);
+          xyz.attr("class", "ansAlert1")
+          $(".ansAlert").append(xyz)
         } else {
           alert("Incorrect " + answer + " is not equal to " + myAnswerVal);
 
-          var abc =  $("<div>").text("Correct " + answer + " is not equal to " + myAnswerVal);
+          var abc = $("<div>").text("Correct " + answer + " is not equal to " + myAnswerVal);
           abc.attr("class", "ansAlert1")
           $(".ansAlert").append(abc);
         };
-      myAnswer.val("");
-
+        myAnswer.val("");
+      });
     });
   });
+
 
   $("#double").on("click", () => {
     const callUrl = "https://jservice.io/api/clues"
@@ -38,33 +68,64 @@ $(document).ready(() => {
     }).then(data => {
       console.log(data);
       answer = (data[0].answer);
-      var myQuestions = []
-      for ( i = 0; i< data.length; i++){
-       $("#displayQ").text(data[i].question);
-        $("<div>").attr("class", "card").append($("<h5>"));
-        // var question = $("<h5>").addClass("card-text").text(data[i].question);
+
+      for (i = 0; i < data.length; i++) {
+        if (data[i].question !== " "){
+
+        var divCard = $("<div>");
+        divCard.attr("class", "card");
+        var hEl = $("<h5>");
+  
+        hEl.attr("class", "card-header");
+        hEl.attr("id", "displayQ");
+  
+        hEl.text(data[i].id + ". " + data[i].question);
+        console.log(data[i].question)
+  
+        var divCb = $("<div>");
+        divCb.attr("class", "card-body");
+        var inputEl = $("<input>");
+        inputEl.attr("class", "card-title");
+        inputEl.attr("id", "answer");
+        var btnEl = $("<button>");
+        btnEl.attr("id", "subAns");
+        btnEl.attr("class", "btn-primary");
+        btnEl.text("Answer")
+        var ansDiv = $("<div>");
+        ansDiv.attr("class", "ansAlert");
+  
+        var mainDiv = divCb.append(inputEl, btnEl, ansDiv);
+  
+        divCard.append(hEl, mainDiv);
+  
+        $(".questionsX").append(divCard);
       }
+
+     
+      };
       $("#subAns").on("click", () => {
-        var myAnswer = $("#answer")
-        var myAnswerVal = (myAnswer.val().trim())
-  
-          if (answer === myAnswerVal) {
-            alert("Correct " + answer + " is equal to " + myAnswerVal);
-           var xyz =  $("<div>").text("Correct " + answer + " is equal to " + myAnswerVal);
-           xyz.attr("class", "ansAlert1")
-           $(".ansAlert").append(xyz)
-          } else {
-            alert("Incorrect " + answer + " is not equal to " + myAnswerVal);
-  
-            var abc =  $("<div>").text("Correct " + answer + " is not equal to " + myAnswerVal);
-            abc.attr("class", "ansAlert1")
-            $(".ansAlert").append(abc);
-          };
+        // $(".questionsX").text(" ");
+
+        var myAnswer = $("#answer");
+        var myAnswerVal = (myAnswer.val().trim());
+
+        console.log(myAnswerVal)
+
+        if (answer === myAnswerVal) {
+          alert("Correct " + answer + " is equal to " + myAnswerVal);
+          var xyz = $("<div>").text("Correct " + answer + " is equal to " + myAnswerVal);
+          xyz.attr("class", "ansAlert1")
+          $(".ansAlert").append(xyz)
+        } else {
+          // alert("Incorrect " + answer + " is not equal to " + myAnswerVal);
+
+          var abc = $("<div>").text("Correct " + answer + " is not equal to " + myAnswerVal);
+          abc.attr("class", "ansAlert1")
+          $(".ansAlert").append(abc);
+        };
         myAnswer.val("");
-  
       });
 
-      console.log(myQuestions)
     });
   })
 
@@ -74,6 +135,7 @@ $(document).ready(() => {
       url: callUrl2
     }).then(data => {
       console.log(data);
+      
     });
   })
 
