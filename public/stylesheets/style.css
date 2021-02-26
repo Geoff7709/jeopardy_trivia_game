@@ -2,11 +2,11 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
 .home {
   border: 1px gray solid;
   width: 96%;
  border-radius:10px ;
-
 }
 
 .div1 {
@@ -20,8 +20,8 @@ form.login {
   justify-content:space-between;
   width: 100%;
   border-radius:10px ;
-
 }
+
 .div1 h1 {
   font-size: 70px;
   padding-bottom: 15px; 
@@ -30,15 +30,18 @@ form.login {
 .loginBtn {
   margin-top: 10px;
 }
+
 .loginBtn a {
   font-size: 20px;
 }
+
 .mylogin {
   height: 80px;
   width: 80px;
   border-radius: 50%;
   padding-top:20px; 
 }
+
 .div2 {
   background-color: wheat;
   border: 1px gray solid;
@@ -50,6 +53,7 @@ form.login {
   text-align: center;
   border-radius:10px ;
 }
+
 .div3 {
   width: 100%;
   padding: 20px;
@@ -59,20 +63,20 @@ form.login {
   border-radius:10px ;
   margin: 0 auto;
   margin-top: 40px;
- 
 }
-.MyImg{
-  display: flex;
 
-}
+/* .MyImg{
+  display: flex;
+} */
+
 .MyImg img {
-border-radius: 50%;
+display: flex;
 margin: 0 auto;
 width: 150px;
 height: 150px;
-
 }
-.bio {
+
+.quotes {
   background-color: wheat;
   border: 1px gray solid;
   padding: 40px;
@@ -80,9 +84,11 @@ height: 150px;
   margin-top: 20px;
 }
 
-.bio h4 {
+.quotes h4 {
   font-size: 20px;
+  width: 100%;
 }
+
 .div4 {
   width: 96%;
   margin: 0 auto;
@@ -91,28 +97,30 @@ height: 150px;
   font-size: 18px;
   text-align: center;
   border-radius:10px ;
-
 }
+
 .navbar-header,.navbar-brand {
   background-color: wheat;
   float: right;
-
 }
 
 .div4 a {
   padding: 20px;
   margin-top: 20px;
 }
+
 .questionsX {
 margin: 0 auto;
 margin-top: 40px;
 width: 80vw;
 padding: 20px;
 }
+
 .card {
   border: 2px gray solid;
   padding: 20px;
 }
+
 .ansAlert1 {
   background-color: lightblue;
   height: 100px;
@@ -127,6 +135,7 @@ padding: 20px;
   body {
     background-color: lightblue;
   };
+
   .div1, .div2, .div3, .div4 {
     display: flex;
     font-size: 20px;
@@ -137,6 +146,7 @@ padding: 20px;
   .loginBtn {
     display: flex;
   }
+
   .mylogin {
     font-size: 5px;
     display: flex;
@@ -146,12 +156,13 @@ padding: 20px;
   .MyImg img, .bio h4, .div1 h1 {
     font-size: small;
   }
+
   .div3  {
     font-size: small;
     display: flex;
     flex-direction: column;
-
   }
+
   /* .bio h4 {
     font-size: small;
     display: flex;
@@ -159,19 +170,18 @@ padding: 20px;
   
   .div4 a {
     font-size: 10px;
-
-
   }
+
   #single, #double, #category,#subAns {
   display: flex;
   font-size: 20px;
   margin-left: 20px;
   margin: 20px;
   }
+
   h1 {
     margin-left: 20px;
   }
-  
   
 /* [class*="col-"] {
   width: 100%;
@@ -187,7 +197,72 @@ padding: 20px;
   }
   .div1 {
     display: flex;
-flex-direction: column;
-
+    flex-direction: column;
   }
+  
 };
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.board {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.board .row {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.board .row .tile {
+  top: 0;
+  bottom: 0;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5vw;
+  font-family: impact;
+  color: #ddd;
+  background: linear-gradient(to top left, #000088, #0000ff);
+  border: 3px solid #000;
+}
+
+.board .row .question-value {
+  display: block;
+}
+
+.board .row .question-answer {
+  display: none;
+}
+
+.board .row .tile.active {
+  border-width: 0;
+  font-size: 10vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 5;
+}
+
+.board .row .tile.active .question-value {
+  display: none;
+}
+
+.board .row .tile.active .question-answer {
+  display: block;
+}
