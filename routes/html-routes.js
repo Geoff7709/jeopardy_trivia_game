@@ -3,6 +3,11 @@ const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const axios = require('axios');
+
+const axiosApiCall = (data) => {
+  return axios(data)
+}
 
 module.exports = function(app) {
 // Home page is home.handlebars, not signup.handlebars
@@ -41,5 +46,22 @@ module.exports = function(app) {
     res.render('gamePlay',{
       user: req.user
     });   
+  });
+  app.get("/gameBoard", isAuthenticated, (req, res) => {
+    // If the user already has an account send them to the members page
+    // if a user is signup or logged in then render user to gamePlay page and user isAuthenticated added
+    const categoriesApiCall = "https://jservice.io/api/categories?count=6";
+    const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
+    axiosApiCall({url: categoriesApiCall}).then(response => {
+      return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
+    }).then((response) => {
+      const payload = response.map(item => item.data)
+      console.log(payload[0].clues)
+      let hbsObject = {object: payload}
+      console.log(hbsObject)
+      return res.render("gameBoard",hbsObject)
+    }).catch(err => {
+      return res.status(422).json(err)
+    })
   });
 };

@@ -130,11 +130,12 @@ $(document).ready(() => {
   })
 
   $("#category").on("click", () => {
-    const callUrl2 = "https://jservice.io/api/categories"
+    const callUrl2 = "/gameBoard"
     $.ajax({
       url: callUrl2
     }).then(data => {
-      console.log(data);
+      window.location.replace("/gameBoard");
+      console.log(data)
       
     });
   })
