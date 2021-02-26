@@ -129,15 +129,34 @@ $(document).ready(() => {
     });
   })
 
-  $("#category").on("click", () => {
-    const callUrl2 = "https://jservice.io/api/categories"
-    $.ajax({
-      url: callUrl2
-    }).then(data => {
-      console.log(data);
-      
-    });
+  $("#category").on("click", () => {
+    $.get("/api/questions")
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+    //     const callUrl2 = "https://jservice.io/api/categories?count=50"
+    //     $.ajax({
+    //       url: callUrl2
+    //     }).then(data => {
+    //       console.log(data);
+    //       console.log(data[1]);
+    //       console.log(data[1].id);
+    //       console.log(data[1].title);
+    //       let data2 = data[1].id
+    //       $.ajax({
+    //         url: `https://jservice.io/api/category?id=${data2}`
+    //       }).then(data => {
+    //         console.log(data);
+    //         console.log(data.clues);
+    //         console.log(data.clues[1]);
+    //         console.log(data.clues[1].answer);
+    //         for (let i = 0; i < data.clues.length; i++) {
+    //           console.log(data.clues[i].question);
+    //           console.log(data.clues[i].answer);
+    //         }
+    //       })
+    //     });
   })
+})
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -160,5 +179,5 @@ $(document).ready(() => {
   // }).then(data => {
   //   console.log(data);
   // });
-});
+
 

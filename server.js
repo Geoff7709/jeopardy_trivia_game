@@ -26,6 +26,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+const router = require('./controllers/question_controller')
+
+app.use(router);
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
