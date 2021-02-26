@@ -4,14 +4,11 @@ form.login {
 }
 
 .home {
-  border: 1px gray solid;
   width: 96%;
- border-radius:10px ;
 }
 
 .div1 {
-  background-color: wheat;
-  border: 1px gray solid;
+  background-color: #1D2D5C;
   margin: 0 auto;
   margin-top: 20px;
   padding: 20px;
@@ -23,6 +20,7 @@ form.login {
 }
 
 .div1 h1 {
+  color: #ddd;
   font-size: 70px;
   padding-bottom: 15px; 
 }
@@ -43,19 +41,17 @@ form.login {
 }
 
 .div2 {
-  background-color: wheat;
-  border: 1px gray solid;
   width: 90%;
   margin: 0 auto;
   padding: 20px;
   margin-top: 40px;
-  font-size: 18px;
+  font-size: 35px;
   text-align: center;
-  border-radius:10px ;
 }
 
 .div3 {
   width: 100%;
+  margin: 20px;
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -72,8 +68,8 @@ form.login {
 .MyImg img {
 display: flex;
 margin: 0 auto;
-width: 150px;
-height: 150px;
+width: 200px;
+height: 200px;
 }
 
 .quotes {
@@ -202,6 +198,7 @@ padding: 20px;
   
 };
 
+/* gameBoard styling*/
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -266,3 +263,4 @@ padding: 20px;
 .board .row .tile.active .question-answer {
   display: block;
 }
+
