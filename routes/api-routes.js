@@ -1,8 +1,13 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const axios = require('axios');
 
-module.exports = function(app) {
+const axiosApiCall = (data) => {
+  return axios(data)
+}
+
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -14,7 +19,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/currentScore",(req, res)=>{
+  app.post("/api/currentScore", (req, res) => {
     var data = {
       currentScore: req.body.currentScore,
       highScore: req.body.highScore
@@ -24,12 +29,12 @@ module.exports = function(app) {
       currentScore: req.body.currentScore,
       highScore: req.body.highScore
     })
-    .then(res=>{
-      console.log(res.body)
-    })
-    .catch(err=>{
-      res.status(401).json(err);
-    })
+      .then(res => {
+        console.log(res.body)
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      })
   })
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -70,13 +75,19 @@ module.exports = function(app) {
       });
     }
   });
-  
-  app.get("/gamePlay", (req, res)=>{
-    db.gamePlay.findAll({})
-    .then(result =>{
-      res.json(result)
+
+  app.get("/api/gameBoard", (req, res) => {
+    const categoriesApiCall = "https://jservice.io/api/categories?count=6";
+    const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
+    axiosApiCall({url: categoriesApiCall}).then(response => {
+      return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
+    }).then((response) => {
+      const payload = response.map(item => item.data)
+      return res.json(payload)
+    }).catch(err => {
+      return res.status(422).json(err)
     })
-    .catch(err =>{throw err})
-  })
+
+  });
 
 };
