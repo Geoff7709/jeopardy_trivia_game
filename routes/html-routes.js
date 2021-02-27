@@ -1,5 +1,8 @@
 // Requiring path to so we can use relative routes to our HTML files
+// const { default: axios } = require("axios");
 const path = require("path");
+const axios = require('axios');
+
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -38,8 +41,26 @@ module.exports = function(app) {
   app.get("/gamePlay", isAuthenticated, (req, res) => {
     // If the user already has an account send them to the members page
     // if a user is signup or logged in then render user to gamePlay page and user isAuthenticated added
+
     res.render('gamePlay',{
       user: req.user
     });   
   });
+
+  app.get("/gameBoard", isAuthenticated, (req, res) => {
+    // If the user already has an account send them to the members page
+    // if a user is signup or logged in then render user to gamePlay page and user isAuthenticated added
+    req.uest({
+      method: 'GET',
+      url: '/api/gameBoard'
+    }, (er, resp) => {
+      if (er) {
+          return res.render('login')
+      }
+      res.render('gameBoard',{
+        object: resp.body
+      })
+    })
+
+  })
 };
