@@ -1,9 +1,7 @@
 <div class="container">
-  <!-- Button HTML (to Trigger Modal) -->
-
-
-  <!-- Modal HTML -->
-
+  <div class="row align-items-center">
+    <span>Score: </span>
+</div>
   <div class="board row">
     {{#each object}}
     <div class="col-md-2 categories">
@@ -11,10 +9,10 @@
       {{#each clues}}
       <div class="row clues">
         <form class="tile">
-          <a href="#{{id}}" class="btn btn-lg btn-primary" data-toggle="modal">{{value}}</a>
+          <a href="#target-{{id}}" class="btn btn-lg btn-primary" data-toggle="modal">{{value}}</a>
         </form>
       </div>
-      <div id="{{id}}" class="modal fade" data-backdrop="static">
+      <div id="target-{{id}}" class="modal fade questionId" data-backdrop="static">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -22,11 +20,14 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+              <h2>Answer:</h2>
               <p>{{question}}</p>
+              <h3>What is:</h3>
+              <textarea id="questionSubmit"></textarea>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Pass</button>
+              <button type="button" class="btn btn-danger">Submit Question</button>
             </div>
           </div>
         </div>
@@ -36,4 +37,5 @@
     {{/each}}
   </div>
 </div>
+
 <script src="./js/gameBoard.js"></script>
