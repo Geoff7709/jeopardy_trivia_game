@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="board">
+    <div class="row categories">
+    {{#each object}}
+      <div class="tile">{{title}}</div>
+        {{#each clues}}
+            <div class="row clues">
+                <div class="tile" onclick="toggleActive(this)">
+                    <div class="question-value">{{value}}</div>
+                    <div class="question-answer">{{question}}</div>
+                </div>
+            </div>
+        {{/each}}
+    {{/each}}
+    </div>
+  </div>
+</div> 
