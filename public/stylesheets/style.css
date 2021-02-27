@@ -16,7 +16,7 @@ form.login {
   flex-direction: row;
   justify-content:space-between;
   width: 100%;
-  border-radius:10px ;
+  border-radius:10px;
 }
 
 .div1 h1 {
@@ -50,39 +50,19 @@ form.login {
 }
 
 .div3 {
-  width: 100%;
   margin: 20px;
   padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  border-radius:10px ;
   margin: 0 auto;
   margin-top: 40px;
 }
 
-/* .MyImg{
-  display: flex;
-} */
-
-.MyImg img {
-display: flex;
-margin: 0 auto;
-width: 200px;
-height: 200px;
-}
-
-.quotes {
-  background-color: wheat;
-  border: 1px gray solid;
-  padding: 40px;
-  border-radius:10px ;
-  margin-top: 20px;
-}
-
-.quotes h4 {
-  font-size: 20px;
-  width: 100%;
+img {
+  width: 75%;
+  height: auto;
+  border-radius:10px;
 }
 
 .div4 {
@@ -96,7 +76,6 @@ height: 200px;
 }
 
 .navbar-header,.navbar-brand {
-  background-color: wheat;
   float: right;
 }
 
@@ -106,10 +85,10 @@ height: 200px;
 }
 
 .questionsX {
-margin: 0 auto;
-margin-top: 40px;
-width: 80vw;
-padding: 20px;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 80vw;
+  padding: 20px;
 }
 
 .card {
@@ -129,7 +108,7 @@ padding: 20px;
 
 @media only screen and (max-width: 600px) {
   body {
-    background-color: lightblue;
+    background-color: #ddd;
   };
 
   .div1, .div2, .div3, .div4 {
@@ -149,7 +128,7 @@ padding: 20px;
 
   }
 
-  .MyImg img, .bio h4, .div1 h1 {
+  .MyImg, .bio h4, .div1 h1 {
     font-size: small;
   }
 
@@ -158,11 +137,6 @@ padding: 20px;
     display: flex;
     flex-direction: column;
   }
-
-  /* .bio h4 {
-    font-size: small;
-    display: flex;
-  } */
   
   .div4 a {
     font-size: 10px;
@@ -178,24 +152,19 @@ padding: 20px;
   h1 {
     margin-left: 20px;
   }
-  
-/* [class*="col-"] {
-  width: 100%;
-} */
-};
 
 @media only screen and (max-width: 425px) {
   .home {
     border: 1px gray solid;
-   width: 96vw;
-  border-radius:10px ;
+    width: 96vw;
+    border-radius:10px ;
   
   }
+
   .div1 {
     display: flex;
     flex-direction: column;
   }
-  
 };
 
 /* gameBoard styling*/
@@ -264,3 +233,5 @@ padding: 20px;
   display: block;
 }
 
+
+}
