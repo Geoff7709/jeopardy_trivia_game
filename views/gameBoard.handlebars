@@ -1,17 +1,41 @@
 <div class="container">
-  <div class="board">
-    <div class="row categories">
+  <div class="row align-items-center">
+    <span>Score: </span>
+</div>
+  <div class="board row">
     {{#each object}}
+    <div class="col-md-2 categories">
       <div class="tile">{{title}}</div>
-        {{#each clues}}
-            <div class="row clues">
-                <div class="tile" onclick="toggleActive(this)">
-                    <div class="question-value">{{value}}</div>
-                    <div class="question-answer">{{question}}</div>
-                </div>
+      {{#each clues}}
+      <div class="row clues">
+        <form class="tile">
+          <a href="#target-{{id}}" class="btn btn-lg btn-primary" data-toggle="modal">{{value}}</a>
+        </form>
+      </div>
+      <div id="target-{{id}}" class="modal fade questionId" data-backdrop="static">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{title}}</h5>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-        {{/each}}
-    {{/each}}
+            <div class="modal-body">
+              <h2>Answer:</h2>
+              <p>{{question}}</p>
+              <h3>What is:</h3>
+              <textarea id="questionSubmit"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Pass</button>
+              <button type="button" class="btn btn-danger">Submit Question</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
     </div>
+    {{/each}}
   </div>
-</div> 
+</div>
+
+<script src="./js/gameBoard.js"></script>
