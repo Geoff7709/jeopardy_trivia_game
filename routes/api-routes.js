@@ -87,5 +87,7 @@ module.exports = function (app) {
     }).catch(err => {
       return res.status(422).json(err)
     })
+
   });
+
 };
