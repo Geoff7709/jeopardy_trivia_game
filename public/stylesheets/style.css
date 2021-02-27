@@ -2,11 +2,26 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+body {
+  background-color: aqua;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .home {
   border: 1px gray solid;
   width: 96%;
  border-radius:10px ;
 
+}
+h1 {
+  text-align: center;
+}
+
+.container-fluid {
+  background-color:black;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .div1 {
@@ -30,6 +45,7 @@ form.login {
 .loginBtn {
   margin-top: 10px;
 }
+
 .loginBtn a {
   font-size: 20px;
 }
@@ -39,6 +55,7 @@ form.login {
   border-radius: 50%;
   padding-top:20px; 
 }
+
 .div2 {
   background-color: wheat;
   border: 1px gray solid;
@@ -63,26 +80,27 @@ form.login {
 }
 .MyImg{
   display: flex;
-
 }
+
 .MyImg img {
 border-radius: 50%;
 margin: 0 auto;
 width: 150px;
 height: 150px;
-
 }
+
 .bio {
   background-color: wheat;
   border: 1px gray solid;
   padding: 40px;
   border-radius:10px ;
   margin-top: 20px;
-}
+};
 
 .bio h4 {
   font-size: 20px;
 }
+
 .div4 {
   width: 96%;
   margin: 0 auto;
@@ -93,7 +111,8 @@ height: 150px;
   border-radius:10px ;
 
 }
-.navbar-header,.navbar-brand {
+
+.navbar-header, .navbar-brand {
   background-color: wheat;
   float: right;
 
@@ -103,30 +122,41 @@ height: 150px;
   padding: 20px;
   margin-top: 20px;
 }
+
 .questionsX {
 margin: 0 auto;
 margin-top: 40px;
 width: 80vw;
 padding: 20px;
 }
+
 .card {
   border: 2px gray solid;
+  width: 96%;
   padding: 20px;
 }
+
 .ansAlert1 {
   background-color: lightblue;
   height: 100px;
   width: 100px;
-  border-radius: 50%;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 55%;
   border: 1px gray solid;
   display: flex;
-  flex-wrap: wrap;
+  flex: wrap;
 }
 
+div {
+  text-align: center;
+
+}
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue;
   };
+
   .div1, .div2, .div3, .div4 {
     display: flex;
     font-size: 20px;
@@ -134,60 +164,48 @@ padding: 20px;
     margin: 20px;
   };
 
-  .loginBtn {
-    display: flex;
-  }
-  .mylogin {
+  .loginBtn, .mylogin {
     font-size: 5px;
     display: flex;
-
   }
 
   .MyImg img, .bio h4, .div1 h1 {
     font-size: small;
   }
+
   .div3  {
     font-size: small;
     display: flex;
     flex-direction: column;
 
   }
-  /* .bio h4 {
-    font-size: small;
-    display: flex;
-  } */
   
   .div4 a {
     font-size: 10px;
-
-
   }
-  #single, #double, #category,#subAns {
+
+  #single, #double, #category,#subAns, #game {
   display: flex;
   font-size: 20px;
   margin-left: 20px;
   margin: 20px;
   }
+
   h1 {
     margin-left: 20px;
   }
-  
-  
-/* [class*="col-"] {
-  width: 100%;
-} */
 };
 
 @media only screen and (max-width: 425px) {
   .home {
     border: 1px gray solid;
    width: 96vw;
-  border-radius:10px ;
+   border-radius:10px ;
   
   }
   .div1 {
     display: flex;
-flex-direction: column;
+   flex-direction: column;
 
   }
 };
