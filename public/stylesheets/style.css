@@ -3,6 +3,10 @@ form.login {
   margin-top: 50px;
 }
 
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .home {
   width: 96%;
 }
