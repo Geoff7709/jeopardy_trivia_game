@@ -1,27 +1,77 @@
+/* Sets everything to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
 }
+
 body {
-  background-color: aqua;
+  /* background-color: aqua; */
+  background-color: #1779ba;
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
 .home {
   border: 1px gray solid;
   width: 96%;
  border-radius:10px ;
-
 }
-h1 {
+
+nav.navbar.navbar {
+  background-color: darkgray;
+}
+
+div .col-md-6-col-md-offset-3, h2 {
+  height: 25px;
+  margin-bottom: 10px;
+  line-height: 1.9;
+}
+
+ .form-group {
+  font-size: medium;
+  line-height: normal;
+}
+
+h1,h2, h3, h4, p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
   text-align: center;
+  font-weight: 800;
+  line-height: 1.9;
+}
+
+h4 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+a {
+  color:black;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+form {
+  line-height: normal;
+  margin-top: 10px;
 }
 
 .container-fluid {
-  background-color:black;
+  background-color:gray;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+p, h4 {
+  font-size: 30px;
+  color:black;
 }
 
 .div1 {
@@ -35,8 +85,8 @@ h1 {
   justify-content:space-between;
   width: 100%;
   border-radius:10px ;
-
 }
+
 .div1 h1 {
   font-size: 70px;
   padding-bottom: 15px; 
@@ -49,12 +99,25 @@ h1 {
 .loginBtn a {
   font-size: 20px;
 }
+
 .mylogin {
+  color: black;
   height: 80px;
   width: 80px;
   border-radius: 50%;
   padding-top:20px; 
 }
+
+.btn {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+button {
+  font-size: 20px;
+
+} 
 
 .div2 {
   background-color: wheat;
@@ -67,6 +130,7 @@ h1 {
   text-align: center;
   border-radius:10px ;
 }
+
 .div3 {
   width: 100%;
   padding: 20px;
@@ -78,7 +142,7 @@ h1 {
   margin-top: 40px;
  
 }
-.MyImg{
+.MyImg {
   display: flex;
 }
 
@@ -90,15 +154,18 @@ height: 150px;
 }
 
 .bio {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: wheat;
   border: 1px gray solid;
   padding: 40px;
   border-radius:10px ;
-  margin-top: 20px;
+  margin-top: 30px;
 };
 
 .bio h4 {
-  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-weight: 800;
 }
 
 .div4 {
@@ -113,14 +180,19 @@ height: 150px;
 }
 
 .navbar-header, .navbar-brand {
-  background-color: wheat;
+  color: white;
+  background-color: gray;
   float: right;
-
+}
+a.navbar-brand {
+  color: white;
+  font-style: bold;
 }
 
 .div4 a {
   padding: 20px;
   margin-top: 20px;
+  color: black;
 }
 
 .questionsX {
@@ -150,8 +222,8 @@ padding: 20px;
 
 div {
   text-align: center;
-
 }
+
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue;
@@ -170,18 +242,17 @@ div {
   }
 
   .MyImg img, .bio h4, .div1 h1 {
-    font-size: small;
+    font-size: 20px;
   }
 
   .div3  {
     font-size: small;
     display: flex;
     flex-direction: column;
-
   }
   
   .div4 a {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   #single, #double, #category,#subAns, #game {
@@ -206,6 +277,5 @@ div {
   .div1 {
     display: flex;
    flex-direction: column;
-
   }
 };
