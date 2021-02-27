@@ -1,20 +1,19 @@
 <div class="container">
   <div class="board">
     <div class="row categories">
-        {{#each object}}
+        {{#each subjects}}
       <div class="tile">{{title}}</div>
         {{/each}}
     </div>
     <div class="row clues">
-        {{#each object}}
-        {{}}
+        {{#each question}}
         <div class="tile" onclick="toggleActive(this)">
-            <div class="question-value">$100</div>
-            <div class="question-answer">This is the answer.</div>
+            <div class="question-value">{{value}}</div>
+            <div class="question-answer">{{question}}</div>
         </div>
         {{/each}}
     </div>
-    <div class="row clues">
+    {{!-- <div class="row clues">
       <div class="tile" onclick="toggleActive(this)"> 
         <div class="question-value">$200</div>
         <div class="question-answer">This is the answer.</div>
@@ -119,4 +118,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
+<script src="/js/gameboard.js"></script>

@@ -56,10 +56,13 @@ module.exports = function(app) {
       return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
     }).then((response) => {
       const payload = response.map(item => item.data)
-      console.log(payload[0].clues)
-      let hbsObject = {object: payload}
+      const questions = payload.map(item => item.clues)
+      console.log(questions)
+      const mergedQuestions = [].concat.apply([], questions)
+      console.log(mergedQuestions)
+      let hbsObject = {subjects: payload, question: mergedQuestions}
       console.log(hbsObject)
-      return res.render("gameBoard",hbsObject)
+      return res.render("gameBoard", hbsObject)
     }).catch(err => {
       return res.status(422).json(err)
     })

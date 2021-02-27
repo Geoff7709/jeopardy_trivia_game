@@ -83,9 +83,9 @@ module.exports = function (app) {
       return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
     }).then((response) => {
       const payload = response.map(item => item.data)
-      
+      console.log(payload)
       let hbsObject = {object: payload}
-      return res.render("gameBoard", hbsObject)
+      return res.json(payload)
     }).catch(err => {
       return res.status(422).json(err)
     })
