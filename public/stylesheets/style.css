@@ -1,14 +1,80 @@
+/* Sets everything to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
 body {
+
+  /* background-color: aqua; */
+  background-color: #1779ba;
+
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .home {
   width: 96%;
+
+ border-radius:10px ;
+}
+
+nav.navbar.navbar {
+  background-color: darkgray;
+}
+
+div .col-md-6-col-md-offset-3, h2 {
+  height: 25px;
+  margin-bottom: 10px;
+  line-height: 1.9;
+}
+
+ .form-group {
+  font-size: medium;
+  line-height: normal;
+}
+
+h1,h2, h3, h4, p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.9;
+}
+
+h4 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+a {
+  color:black;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+form {
+  line-height: normal;
+  margin-top: 10px;
+}
+
+.container-fluid {
+  background-color:gray;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+p, h4 {
+  font-size: 30px;
+  color:black;
+
 }
 
 .div1 {
@@ -20,7 +86,9 @@ body {
   flex-direction: row;
   justify-content:space-between;
   width: 100%;
+
   border-radius:10px;
+
 }
 
 .div1 h1 {
@@ -38,11 +106,25 @@ body {
 }
 
 .mylogin {
+  color: black;
   height: 80px;
   width: 80px;
   border-radius: 50%;
   padding-top:20px; 
 }
+
+
+.btn {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+button {
+  font-size: 20px;
+
+} 
+
 
 .div2 {
   width: 90%;
@@ -63,12 +145,41 @@ body {
   margin-top: 40px;
 }
 
+
 img {
   width: 75%;
   height: auto;
   border-radius:10px;
   box-shadow: 10px 10px 5px grey;
 }
+
+
+.MyImg {
+  display: flex;
+}
+
+.MyImg img {
+border-radius: 50%;
+margin: 0 auto;
+width: 150px;
+height: 150px;
+}
+
+.bio {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: wheat;
+  border: 1px gray solid;
+  padding: 40px;
+  border-radius:10px ;
+  margin-top: 30px;
+};
+
+.bio h4 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  font-weight: 800;
+}
+
 
 .div4 {
   width: 96%;
@@ -80,13 +191,25 @@ img {
   border-radius:10px ;
 }
 
+
 .navbar-header,.navbar-brand {
   float: right;
+
+.navbar-header, .navbar-brand {
+  color: white;
+  background-color: gray;
+  float: right;
+}
+a.navbar-brand {
+  color: white;
+  font-style: bold;
+
 }
 
 .div4 a {
   padding: 20px;
   margin-top: 20px;
+  color: black;
 }
 
 .questionsX {
@@ -98,6 +221,7 @@ img {
 
 .card {
   border: 2px gray solid;
+  width: 96%;
   padding: 20px;
 }
 
@@ -105,10 +229,16 @@ img {
   background-color: lightblue;
   height: 100px;
   width: 100px;
-  border-radius: 50%;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 55%;
   border: 1px gray solid;
   display: flex;
-  flex-wrap: wrap;
+  flex: wrap;
+}
+
+div {
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -123,18 +253,23 @@ img {
     margin: 20px;
   };
 
+
   .loginBtn {
     display: flex;
   }
 
-  .mylogin {
+  
+
+  .loginBtn, .mylogin {
+
     font-size: 5px;
     display: flex;
-
   }
+
 
   .MyImg, .bio h4, .div1 h1 {
     font-size: 35px;
+
   }
 
   .div3  {
@@ -144,10 +279,12 @@ img {
   }
   
   .div4 a {
+
     font-size: 12px;
   }
 
   #single, #double, #category,#subAns {
+
   display: flex;
   font-size: 20px;
   margin-left: 20px;
@@ -158,16 +295,23 @@ img {
     margin-left: 20px;
   }
 
+};
+
+
 @media only screen and (max-width: 425px) {
   .home {
     border: 1px gray solid;
+
     width: 96vw;
     border-radius:10px ;
+
   }
 
   .div1 {
     display: flex;
+
     flex-direction: column;
+
   }
 };
 

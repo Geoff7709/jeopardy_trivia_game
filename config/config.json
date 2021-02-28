@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "rootroot",
+
+   "password": "password",
+
     "database": "jeopardy_game_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
