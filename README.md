@@ -1,18 +1,17 @@
 # Jeopardy Trivia
-### (Group 5 - Project 2)
+## Group 5 - Project 2
 
+***
 
 ## User Story
 
-AS A Jeopardy and/or trivia enthusiast,
-I WANT to play a game by creating a login, clicking the game option,
-AND THEN I can keep track of my scores.
+* AS A Jeopardy and/or trivia enthusiast,
+* I WANT to play a game by creating a login, clicking the game option,
+* AND THEN I can keep track of my scores.
 
 ## Description
 
 An Alex Trebek Tribute application where you can reminisce and play a <em>version</em> of Jeopardy
-
-***
 
 ## Project/Application Requirements
 
@@ -27,21 +26,15 @@ An Alex Trebek Tribute application where you can reminisce and play a <em>versio
 * Must meet good quality coding standards (indentation, scoping, naming).
 * Must protect API keys in Node with environment variables.
 
-***
-
 ## API
 
-The Alex Trebek Tribute Trivia Challenge utilizes 1 API that provides over 156,000 trivia questions, clues, categories, answers and more. 
+The Alex Trebek Tribute Trivia Challenge utilizes one API that provides over 156,000 trivia questions, clues, categories, answers and more. 
 
-[jService](http://jservice.io//) 
-
-Thanks for the great API, Steve Ottenad (@scottenad - https://github.com/sottenad)
+* [jService](http://jservice.io//) - Thanks for the great API, Steve Ottenad! (@scottenad - https://github.com/sottenad)
 
 ## Template Engine
 
 The application framework for this site is by [Handlebars](https://handlebarsjs.com/)
-
-***
 
 ### Application Deployment Link - Heroku
 
