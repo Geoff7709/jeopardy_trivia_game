@@ -16,27 +16,6 @@ body {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.home {
-  border: 1px gray solid;
-  width: 96%;
- border-radius:10px ;
-}
-
-nav.navbar.navbar {
-  background-color: darkgray;
-}
-
-div .col-md-6-col-md-offset-3, h2 {
-  height: 25px;
-  margin-bottom: 10px;
-  line-height: 1.9;
-}
-
- .form-group {
-  font-size: medium;
-  line-height: normal;
-}
-
 h1,h2, h3, h4, p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: medium;
@@ -45,34 +24,91 @@ h1,h2, h3, h4, p {
   line-height: 1.9;
 }
 
-h4 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 30px;
+/* *************** NAVBAR ********************* */
+.navbar {
+  background-color: #000;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.head1{
+  /* border: 2px red solid; */
+  width: 40%;
+}
+.head1 h1 {
+  color: #fff;
+  font-size: 40px;
 }
 
-a {
-  color:black;
-  font-size: 30px;
-  margin-top: 10px;
+.container-fluid1 {
+  min-height: 100px;
+  margin-right: 0;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.navbar-header {
+  float: right;
+}
+
+.navbar-header a {
+  color:white;
+  font-style: bold;
+}
+
+
+
+/* ******************* LOGIN AND SIGNUP ****************** */
+.signf1 {
+  border: 2px rgb(22, 21, 21) solid;
+}
+.signf1 h2 {
+  height: 25px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 1.9;
+}
+
+ .form-group {
+  font-size: 20px;
+  color: white;
+  line-height: normal;
+  width: 80%;
+  margin: 0 auto;
+}
 form {
   line-height: normal;
   margin-top: 10px;
 }
-
-.container-fluid {
-  background-color:gray;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+.btn-default {
+  margin-top: 20px;
 }
-
-p, h4 {
-  font-size: 30px;
+a {
+  color:black;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.signf1 p, h4 {
+  font-size: 20px;
   color:black;
 }
+/* ***************** HOME ********************** */
+.home {
+  border: 1px gray solid;
+  width: 96%;
+ border-radius:10px ;
+}
+
+.bio, h4 {
+  font-size: 30px;
+}
+
 
 .div1 {
   background-color: wheat;
@@ -109,15 +145,15 @@ p, h4 {
 }
 
 .btn {
-  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; */
   font-size: 20px;
   color: black;
 }
 
-button {
+/* button {
   font-size: 20px;
 
-} 
+}  */
 
 .div2 {
   background-color: wheat;
@@ -179,15 +215,7 @@ height: 150px;
 
 }
 
-.navbar-header, .navbar-brand {
-  color: white;
-  background-color: gray;
-  float: right;
-}
-a.navbar-brand {
-  color: white;
-  font-style: bold;
-}
+
 
 .div4 a {
   padding: 20px;
@@ -223,11 +251,72 @@ padding: 20px;
 div {
   text-align: center;
 }
+.Q {
+  font-size: 35px;
+  color: #fff;
+}
+
+.navgate  {
+  justify-content: center;
+  width: 90%;
+  /* width: 60%; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  border: 1px black solid;
+}
+
+
+@media only screen and (min-width: 676px){
+
+  .navbar {
+    flex-direction: row;
+  }
+
+  .head1{
+    width: 40%;
+  }
+  .head1 h1 {
+    color: #fff;
+    font-size: 40px;
+  }
+  
+  .container-fluid1 {
+    min-height: 100px;
+    margin-right: 0;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-header {
+    float: right;
+    padding-top: 20px;
+  }
+  
+  .navbar-header a {
+    color:white;
+    font-style: bold;
+  }
+  .navgate  {
+    /* width: 90%; */
+    width: 60%;
+  }
+}
+@media only screen  and (min-width:776px){
+  .navbar-header a {
+    color:white;
+    font-style: bold;
+    margin-left: 20px;
+  }
+}
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  };
 
   .div1, .div2, .div3, .div4 {
     display: flex;
@@ -255,7 +344,7 @@ div {
     font-size: 13px;
   }
 
-  #single, #double, #category,#subAns, #game {
+  #single, #double, #category,#subAns {
   display: flex;
   font-size: 20px;
   margin-left: 20px;

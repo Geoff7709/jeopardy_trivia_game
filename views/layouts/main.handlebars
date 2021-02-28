@@ -15,14 +15,34 @@
 
 <body>
   <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="head1">
+      <h1>Jeoparday!</h1>
+    </div>
+    <div class="container-fluid1">
       <div class="navbar-header">
         {{#if user}}
-        <a class="navbar-brand" href="/logout">
+        <a class="btn btn-primary" href="/logout">
           Logout
         </a>
         {{/if}}
       </div>
+      
+      <div class="navbar-header">
+        {{#if user}}
+        <a class="btn btn-primary" href="/gameBoard">
+          Game Board
+        </a>
+        {{/if}}
+      </div>
+
+      <div class="navbar-header">
+        {{#if user}}
+        <a class="btn btn-primary" href="/gamePlay">
+          Game Play
+        </a>
+        {{/if}}
+      </div>
+      
     </div>
   </nav>
   {{{body}}}
