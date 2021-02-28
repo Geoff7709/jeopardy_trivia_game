@@ -11,14 +11,16 @@ form.login {
 }
 
 body {
+
   /* background-color: aqua; */
   background-color: #1779ba;
+
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .home {
-  border: 1px gray solid;
   width: 96%;
+
  border-radius:10px ;
 }
 
@@ -72,11 +74,11 @@ form {
 p, h4 {
   font-size: 30px;
   color:black;
+
 }
 
 .div1 {
-  background-color: wheat;
-  border: 1px gray solid;
+  background-color: #1D2D5C;
   margin: 0 auto;
   margin-top: 20px;
   padding: 20px;
@@ -84,10 +86,13 @@ p, h4 {
   flex-direction: row;
   justify-content:space-between;
   width: 100%;
-  border-radius:10px ;
+
+  border-radius:10px;
+
 }
 
 .div1 h1 {
+  color: #ddd;
   font-size: 70px;
   padding-bottom: 15px; 
 }
@@ -108,6 +113,7 @@ p, h4 {
   padding-top:20px; 
 }
 
+
 .btn {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 20px;
@@ -119,29 +125,35 @@ button {
 
 } 
 
+
 .div2 {
-  background-color: wheat;
-  border: 1px gray solid;
   width: 90%;
   margin: 0 auto;
   padding: 20px;
   margin-top: 40px;
-  font-size: 18px;
+  font-size: 35px;
   text-align: center;
-  border-radius:10px ;
 }
 
 .div3 {
-  width: 100%;
+  margin: 20px;
   padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  border-radius:10px ;
   margin: 0 auto;
   margin-top: 40px;
- 
 }
+
+
+img {
+  width: 75%;
+  height: auto;
+  border-radius:10px;
+  box-shadow: 10px 10px 5px grey;
+}
+
+
 .MyImg {
   display: flex;
 }
@@ -168,6 +180,7 @@ height: 150px;
   font-weight: 800;
 }
 
+
 .div4 {
   width: 96%;
   margin: 0 auto;
@@ -176,8 +189,11 @@ height: 150px;
   font-size: 18px;
   text-align: center;
   border-radius:10px ;
-
 }
+
+
+.navbar-header,.navbar-brand {
+  float: right;
 
 .navbar-header, .navbar-brand {
   color: white;
@@ -187,6 +203,7 @@ height: 150px;
 a.navbar-brand {
   color: white;
   font-style: bold;
+
 }
 
 .div4 a {
@@ -196,10 +213,10 @@ a.navbar-brand {
 }
 
 .questionsX {
-margin: 0 auto;
-margin-top: 40px;
-width: 80vw;
-padding: 20px;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 80vw;
+  padding: 20px;
 }
 
 .card {
@@ -226,7 +243,7 @@ div {
 
 @media only screen and (max-width: 600px) {
   body {
-    background-color: lightblue;
+    background-color: #ddd;
   };
 
   .div1, .div2, .div3, .div4 {
@@ -236,13 +253,23 @@ div {
     margin: 20px;
   };
 
+
+  .loginBtn {
+    display: flex;
+  }
+
+  
+
   .loginBtn, .mylogin {
+
     font-size: 5px;
     display: flex;
   }
 
-  .MyImg img, .bio h4, .div1 h1 {
-    font-size: 20px;
+
+  .MyImg, .bio h4, .div1 h1 {
+    font-size: 35px;
+
   }
 
   .div3  {
@@ -252,10 +279,12 @@ div {
   }
   
   .div4 a {
-    font-size: 13px;
+
+    font-size: 12px;
   }
 
-  #single, #double, #category,#subAns, #game {
+  #single, #double, #category,#subAns {
+
   display: flex;
   font-size: 20px;
   margin-left: 20px;
@@ -265,17 +294,92 @@ div {
   h1 {
     margin-left: 20px;
   }
+
 };
+
 
 @media only screen and (max-width: 425px) {
   .home {
     border: 1px gray solid;
-   width: 96vw;
-   border-radius:10px ;
-  
+
+    width: 96vw;
+    border-radius:10px ;
+
   }
+
   .div1 {
     display: flex;
-   flex-direction: column;
+
+    flex-direction: column;
+
   }
 };
+
+/* gameBoard.handlebars styling*/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.board {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.board .row {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.board .row .tile {
+  top: 0;
+  bottom: 0;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5vw;
+  font-family: impact;
+  color: #ddd;
+  background: linear-gradient(to top left, #000088, #0000ff);
+  border: 3px solid #000;
+}
+
+.board .row .question-value {
+  display: block;
+}
+
+.board .row .question-answer {
+  display: none;
+}
+
+.board .row .tile.active {
+  border-width: 0;
+  font-size: 10vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 5;
+}
+
+.board .row .tile.active .question-value {
+  display: none;
+}
+
+.board .row .tile.active .question-answer {
+  display: block;
+}
+
+
+}
