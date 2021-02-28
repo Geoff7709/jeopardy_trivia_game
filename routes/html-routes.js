@@ -15,8 +15,11 @@ module.exports = function (app) {
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      // res.redirect("/members");
+      res.redirect("/gamePlay");
+
     };
+
     res.render('signup');
   });
 
@@ -24,7 +27,9 @@ module.exports = function (app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      // res.redirect("/members");
+      res.redirect("/gamePlay");
+
     };
     res.render('login');
   });
@@ -83,6 +88,7 @@ module.exports = function (app) {
       }
       const body = categories(query[type], resp.body)
       res.render('gameBoard', {
+        user: req.user,
         object: body
       })
     })
