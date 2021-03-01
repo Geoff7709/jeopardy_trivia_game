@@ -5,21 +5,17 @@
   box-sizing: border-box;
 }
 
-form.signup,
-form.login {
+  form.signup,
+  form.login {
   margin-top: 50px;
 }
 
-body {
-
-  /* background-color: aqua; */
+  body {
   background-color: #1779ba;
-
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-
-h1,h2, h3, h4, p {
+  h1,h2, h3, h4, p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: medium;
   text-align: center;
@@ -28,7 +24,7 @@ h1,h2, h3, h4, p {
 }
 
 /* *************** NAVBAR ********************* */
-.navbar {
+  .navbar {
   background-color: #000;
   min-height: 100px;
   width: 100%;
@@ -37,17 +33,19 @@ h1,h2, h3, h4, p {
   flex-direction: column;
   justify-content: space-around;
 }
-.head1{
-  /* border: 2px red solid; */
+  .head1{
   width: 40%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 35px;
 }
-.head1 h1 {
+
+ .head1 h1 {
   color: #fff;
   font-size: 40px;
-
 }
-
-.container-fluid1 {
+ 
+ .container-fluid1 {
   min-height: 100px;
   margin-right: 0;
   margin-left: auto;
@@ -64,14 +62,30 @@ h1,h2, h3, h4, p {
 .navbar-header a {
   color:white;
   font-style: bold;
+  margin: 20px;
 }
 
-
+ .Scgame{
+  color: white;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+}
+div.tile{
+  color: white;
+  font-size: 15px;
+  align-items: center;
+  margin-left: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-style: bold;
+}
 
 /* ******************* LOGIN AND SIGNUP ****************** */
 .signf1 {
   border: 2px rgb(22, 21, 21) solid;
 }
+
 .signf1 h2 {
   height: 25px;
   margin-bottom: 10px;
@@ -86,17 +100,21 @@ h1,h2, h3, h4, p {
   width: 80%;
   margin: 0 auto;
 }
+
 form {
   line-height: normal;
   margin-top: 10px;
 }
+
 .btn-default {
   margin-top: 20px;
 }
+
 a {
   color:black;
   font-size: 20px;
   margin-top: 10px;
+
 }
 .signf1 p, h4 {
   font-size: 20px;
@@ -111,63 +129,63 @@ a {
 
 .bio, h4 {
   font-size: 30px;
-
   color:black;
-
-
 }
-
 
 .div1 {
   background-color: #1D2D5C;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 20px;
-  display: flex;
+  padding: 10px;
   flex-direction: row;
+  display: flex;
   justify-content:space-between;
-  width: 100%;
-
+  width: 96%;
   border-radius:10px;
+}
+
+.h12 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 35px;
+  text-align: center;
 
 }
 
-.div1 h1 {
+ .div1 h1 {
   color: #ddd;
-  font-size: 70px;
+  font-size: 30px;
+  margin: 0 auto;
+  /* margin-left: 20px; */
   padding-bottom: 15px; 
 }
 
-.loginBtn {
-  margin-top: 10px;
+ .loginBtn {
+  margin-right: 20px;
+  
 }
 
-.loginBtn a {
+ .loginBtn a {
   font-size: 20px;
 }
 
-.mylogin {
+ .mylogin {
   color: black;
   height: 80px;
   width: 80px;
   border-radius: 50%;
   padding-top:20px; 
+
 }
 
-
-.btn {
-  /* font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; */
+  .btn {
   font-size: 20px;
   color: black;
 }
 
-/* button {
-  font-size: 20px;
-
-}  */
-
-
-.div2 {
+ .div2 {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
@@ -176,53 +194,56 @@ a {
   text-align: center;
 }
 
-.div3 {
+ .div3 {
   margin: 20px;
-  padding: 20px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content:space-between;
   margin: 0 auto;
-  margin-top: 40px;
 }
 
-
-img {
+ img {
   width: 75%;
+  margin-top: 20%;
   height: auto;
   border-radius:10px;
   box-shadow: 10px 10px 5px grey;
 }
 
-
-.MyImg {
+ .MyImg {
   display: flex;
 }
 
-.MyImg img {
-border-radius: 50%;
-margin: 0 auto;
-width: 150px;
-height: 150px;
-}
+  .MyImg img {
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  }
 
-.bio {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: wheat;
-  border: 1px gray solid;
-  padding: 40px;
-  border-radius:10px ;
-  margin-top: 30px;
-};
+  .quotes{
+    color: white;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
 
-.bio h4 {
+  .bio {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: wheat;
+    border: 1px gray solid;
+    padding: 40px;
+    border-radius:10px ;
+    margin-top: 30px;
+  };
+
+  .bio h4 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 30px;
   font-weight: 800;
 }
-
-
-.div4 {
+ 
+  .div4 {
   width: 96%;
   margin: 0 auto;
   padding: 40px;
@@ -231,7 +252,6 @@ height: 150px;
   text-align: center;
   border-radius:10px ;
 }
-
 
 .div4 a {
   padding: 20px;
@@ -252,7 +272,7 @@ height: 150px;
   padding: 20px;
 }
 
-.ansAlert1 {
+  .ansAlert1 {
   background-color: lightblue;
   height: 100px;
   width: 100px;
@@ -264,18 +284,17 @@ height: 150px;
   flex: wrap;
 }
 
-div {
+  div {
   text-align: center;
 }
-.Q {
+  .Q {
   font-size: 35px;
   color: #fff;
 }
 
 .navgate  {
   justify-content: center;
-  width: 90%;
-  /* width: 60%; */
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -285,9 +304,18 @@ div {
   border: 1px black solid;
 }
 
+  @media only screen and (min-width:995px){
+  .board .row {
+    flex-direction: row;
+  }
+  .categories {
+    display: table-row;
+    font-size: 20px;
+  
+  }
+};
 
-@media only screen and (min-width: 676px){
-
+  @media only screen and (min-width: 676px){
   .navbar {
     flex-direction: row;
   }
@@ -298,6 +326,7 @@ div {
   .head1 h1 {
     color: #fff;
     font-size: 40px;
+
   }
   
   .container-fluid1 {
@@ -318,23 +347,22 @@ div {
   .navbar-header a {
     color:white;
     font-style: bold;
+    
   }
   .navgate  {
-    /* width: 90%; */
     width: 60%;
   }
-}
-@media only screen  and (min-width:776px){
+};
+
+  @media only screen  and (min-width:776px){
   .navbar-header a {
     color:white;
     font-style: bold;
     margin-left: 20px;
   }
-}
+};
 
-@media only screen and (max-width: 600px) {
-
-
+  @media only screen and (min-width: 600px) {
   .div1, .div2, .div3, .div4 {
     display: flex;
     font-size: 20px;
@@ -342,23 +370,17 @@ div {
     margin: 20px;
   };
 
-
   .loginBtn {
     display: flex;
   }
 
-  
-
   .loginBtn, .mylogin {
-
     font-size: 5px;
     display: flex;
   }
 
-
   .MyImg, .bio h4, .div1 h1 {
     font-size: 35px;
-
   }
 
   .div3  {
@@ -368,12 +390,10 @@ div {
   }
   
   .div4 a {
-
     font-size: 12px;
   }
 
   #single, #double, #category,#subAns {
-
   display: flex;
   font-size: 20px;
   margin-left: 20px;
@@ -383,22 +403,17 @@ div {
   h1 {
     margin-left: 20px;
   }
-
 };
 
-
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 425px) {
   .home {
     border: 1px gray solid;
-
     width: 96vw;
     border-radius:10px ;
-
   }
 
   .div1 {
     display: flex;
-
     flex-direction: column;
 
   }
@@ -406,9 +421,9 @@ div {
 
 /* gameBoard.handlebars styling*/
 
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: border-box;
-}
+} */
 
 .board {
   position: absolute;
@@ -469,5 +484,3 @@ div {
 .board .row .tile.active .question-answer {
   display: block;
 }
-
-

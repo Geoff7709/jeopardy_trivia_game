@@ -8,15 +8,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
   <nav class="navbar navbar-default">
     <div class="head1">
-      <h1>Jeoparday!</h1>
+      <h1>Jeopardy!</h1>
     </div>
     <div class="container-fluid1">
       <div class="navbar-header">
@@ -26,28 +28,17 @@
         </a>
         {{/if}}
       </div>
-      
-      <div class="navbar-header">
-        {{#if user}}
-        <a class="btn btn-primary" href="/gameBoard">
-          Game Board
-        </a>
-        {{/if}}
+      {{#unless user}}
+      <div class="loginBtn">
+        <a href="/login" class="btn btn-primary mylogin">login</a>
       </div>
+      {{/unless}}
 
-      <div class="navbar-header">
-        {{#if user}}
-        <a class="btn btn-primary" href="/gamePlay">
-          Game Play
-        </a>
-        {{/if}}
-      </div>
-      
     </div>
   </nav>
   {{{body}}}
 
-  
+
 </body>
 
 </html>

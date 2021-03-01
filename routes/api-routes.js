@@ -79,7 +79,7 @@ module.exports = function (app) {
   app.get("/api/gameBoard", (req, res) => {
     const categoriesApiCall = "https://jservice.io/api/categories?count=6";
     const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
-    axiosApiCall({url: categoriesApiCall}).then(response => {
+    axiosApiCall({ url: categoriesApiCall }).then(response => {
       return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
     }).then((response) => {
       const payload = response.map(item => item.data)
