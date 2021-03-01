@@ -1,10 +1,8 @@
-$(".btn-danger").on("click", function (e) {
-    const input = $("#quesForm")
-    console.log(input)
-    let userQuestion = $("#questionSubmit").val()
-    let userQuestoinText = $("#questionSubmit").text()
+$(".btn-danger").on("click", function(e) {
+    const input = $("#quesForm");
+    console.log(input);
+    let userQuestion = $(this).parent().prev().find('input').val()
     console.log(userQuestion)
-    console.log(userQuestoinText);
     const questId = +$(this).parents(".questionId").attr("id").split("-")[1]
     console.log(questId)
     $.get("/api/gameBoard").then(data => {
