@@ -1,7 +1,7 @@
 $(document).ready(() => {
   $("#single").on("click", () => {
 
- 
+
     window.location.replace("/gameBoard?type=single");
   })
 
