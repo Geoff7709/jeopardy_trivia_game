@@ -27,7 +27,7 @@
   .navbar {
   background-color: #000;
   min-height: 100px;
-  width: 105%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -68,8 +68,11 @@
 }
 div.tile{
   color: white;
+  font-size: 15px;
   align-items: center;
   margin-left: 0;
+  margin-bottom: 20px;
+  font-style: bold;
 }
 
 /* ******************* LOGIN AND SIGNUP ****************** */
@@ -160,7 +163,6 @@ a {
   padding-top:20px; 
 }
 
-
   .btn {
   font-size: 20px;
   color: black;
@@ -184,7 +186,6 @@ a {
   margin: 0 auto;
 }
 
-
  img {
   width: 75%;
   margin-top: 20%;
@@ -192,7 +193,6 @@ a {
   border-radius:10px;
   box-shadow: 10px 10px 5px grey;
 }
-
 
  .MyImg {
   display: flex;
@@ -226,7 +226,6 @@ a {
   font-weight: 800;
 }
  
-
   .div4 {
   width: 96%;
   margin: 0 auto;
@@ -236,7 +235,6 @@ a {
   text-align: center;
   border-radius:10px ;
 }
-
 
 .div4 a {
   padding: 20px;
@@ -390,13 +388,11 @@ a {
   }
 };
 
-
 @media only screen and (max-width: 425px) {
   .home {
     border: 1px gray solid;
     width: 96vw;
     border-radius:10px ;
-
   }
 
   .div1 {
