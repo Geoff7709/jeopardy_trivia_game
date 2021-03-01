@@ -1,8 +1,7 @@
 {
   "development": {
     "username": "root",
-
-   "password": null,
+   "password": "Luna",
 
 
     "database": "jeopardy_game_db",
