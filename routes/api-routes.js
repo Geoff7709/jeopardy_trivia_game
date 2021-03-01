@@ -80,7 +80,7 @@ module.exports = function (app) {
     const randomOffset = Math.floor(Math.random() * 18000);
     const categoriesApiCall = `https://jservice.io/api/categories?offset=${randomOffset}&count=6`;
     const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
-    axiosApiCall({url: categoriesApiCall}).then(response => {
+    axiosApiCall({ url: categoriesApiCall }).then(response => {
       return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
     }).then((response) => {
       const payload = response.map(item => item.data)
