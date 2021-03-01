@@ -5,7 +5,7 @@
   <div class="board row">
     {{#each object}}
     <div class="col-md-2 categories">
-      <div class="tile">{{title}}</div>
+      <div class="tile categoryTile" data-val="{{id}}">{{title}}</div>
       {{#each clues}}
       <div class="row clues">
         <form class="tile">
@@ -28,7 +28,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Pass</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Submit Question</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" data-val="{{id}}">Submit Question</button>
             </div>
           </div>
         </div>

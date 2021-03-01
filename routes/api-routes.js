@@ -89,4 +89,12 @@ module.exports = function (app) {
       return res.status(422).json(err)
     })
   });
+  app.get("/api/gameBoard/answerCheck/:id", (req, res) => {
+    categoryId = req.params;
+    axios.get(`https://jservice.io/api/categories?id=${categoryId}`)
+    .then(response => {
+      console.log(response.data);
+      
+    }).catch(err => console.log(err))
+  })
 };

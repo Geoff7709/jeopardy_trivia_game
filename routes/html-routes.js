@@ -82,6 +82,7 @@ module.exports = function (app) {
         return res.render('login')
       }
       const body = categories(query[type], resp.body)
+      console.log(body)
       res.render('gameBoard', {
         object: body
       })
