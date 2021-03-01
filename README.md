@@ -49,8 +49,8 @@ The application framework for this site is by [Handlebars](https://handlebarsjs.
 Thanks to the following people who have contributed to this project:
 
 * [@GeoffreyZimmerman](https://github.com/Geoff7709) 
-* [@DavidSotomayor](https://github.com/XXXXX)
-* [@DestaMulualem](https://github.com/XXXXX)
+* [@DavidSotomayor](https://github.com/DavidESotomayor)
+* [@DestaMulualem](https://github.com/destish21)
 * [@TracyGolden](https://github.com/tracy80s2003) 
 
 ### 
