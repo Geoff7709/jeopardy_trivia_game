@@ -3,6 +3,7 @@ $(document).ready(function () {
         const user = $('.gameBoard').attr("data-user")
         const highScore = +$('.gameBoard').attr("data-highscore")
         const getScore = +document.getElementById('currentScore').innerHTML
+
         $.ajax({
             type: 'POST',
             url: '/api/currentScore',
@@ -14,6 +15,29 @@ $(document).ready(function () {
             window.location.replace("/highScore");
         })
     }, 5 * 60 * 1000)
+
+    function startTimer(duration, display) {
+        let timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = `Timer: ${minutes} : ${seconds}`;
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000)
+    }
+    window.onload = function () {
+        let fiveMinutes = 60 * 5,
+            display = document.getElementById('timer');
+        startTimer(fiveMinutes, display);
+    };
+
 
     $(".btn-danger").on("click", function (event) {
         event.preventDefault();
@@ -65,7 +89,7 @@ $(document).ready(function () {
         $(this).parents('.questionId').prev().children().children().attr({ "class": "disabled btn btn-secondary btn-primary btn-lg", "href": " " })
     })
 
-    $(".exit").on("click", function () {        
+    $(".exit").on("click", function () {
         window.location.replace("/highScore")
     })
 })  
