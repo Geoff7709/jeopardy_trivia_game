@@ -214,6 +214,7 @@ a {
   flex-direction: row;
   justify-content:space-between;
   margin: 0 auto;
+  border: 2px red solid;
 }
 
  img {
