@@ -90,4 +90,18 @@ module.exports = function (app) {
 
   });
 
+  app.post("/api/category", (req, res) => {
+    const { id, category_id, answer } = req.body
+    const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
+    axiosApiCall({ url: categoryApiCall(category_id) })
+      .then((response) => {
+        const currentClue = response.data.clues.find(element => element.id === id);
+        const checkAnswer = currentClue.answer.includes(answer)
+        return res.json({ checkAnswer })
+      }).catch(err => {
+        return res.status(422).json(err)
+      })
+
+  });
+
 };
