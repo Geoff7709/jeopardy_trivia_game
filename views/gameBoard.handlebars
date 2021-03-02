@@ -1,4 +1,4 @@
-<div class="container gameBoard">
+<div class="container gameBoard" data-user="{{user.id}}" data-highScore="{{user.highScore}}">
   <div class="row align-items-center Scgame">
     <span>Score:</span>
     <span id="currentScore"></span>
@@ -13,7 +13,8 @@
             <a href="#target-{{id}}" data-toggle="modal" class="btn btn-secondary btn-primary btn-lg disabled-target-{{id}}" tabindex="-1" role="button" aria-disabled="true">{{value}}</a>
         </form>
       </div>
-      <div id="target-{{id}}" class="modal fade questionId" data-backdrop="static" data-value="{{value}}">
+      <div id="target-{{id}}" class="modal fade questionId" data-backdrop="static" data-category-id="{{category_id}}"
+        data-value="{{value}}">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -27,7 +28,7 @@
               <textarea id="questionSubmit"></textarea>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btnPass" data-dismiss="modal">Pass</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Pass</button>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Submit Question</button>
             </div>
           </div>
@@ -37,6 +38,7 @@
     </div>
     {{/each}}
   </div>
+  <button class="btn btn-warning exit">Exit</button>
 </div>
 
 <script src="./js/gameBoard.js"></script>

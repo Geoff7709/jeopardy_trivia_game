@@ -2,6 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const axios = require('axios');
+const { Op } = require("sequelize");
 
 const axiosApiCall = (data) => {
   return axios(data)
@@ -18,24 +19,6 @@ module.exports = function (app) {
       id: req.user.id
     });
   });
-
-  app.post("/api/currentScore", (req, res) => {
-    var data = {
-      currentScore: req.body.currentScore,
-      highScore: req.body.highScore
-    }
-    console.log(data)
-    db.create({
-      currentScore: req.body.currentScore,
-      highScore: req.body.highScore
-    })
-      .then(res => {
-        console.log(res.body)
-      })
-      .catch(err => {
-        res.status(401).json(err);
-      })
-  })
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
@@ -101,7 +84,66 @@ module.exports = function (app) {
       }).catch(err => {
         return res.status(422).json(err)
       })
-
   });
 
+  app.post("/api/currentScore", (req, res) => {
+    // destructuring currentScore and highScore from the resquest
+    // and saving it to the request body.
+    const { currentScore = null, highScore = null } = req.body
+    // creating a user object with the currentScore and highScore null
+    let user = {
+      currentScore: null,
+      highScore: null,
+    };
+    // comparing request from api body
+    if (currentScore > highScore) {
+      // sets the user currentScore and highScore as the score from the api body request only
+      // if the currentScore is greater than the highScore
+      user.currentScore = +currentScore;
+      user.highScore = +currentScore;
+    } else {
+      // sets the user currentScore and highScore as the score from the api body request
+      user.currentScore = +(currentScore || 0)
+    }
+    // updates user database where the id matches the id on the body request
+    // when user highScore is null, the highScore value will not update
+    // when currentScore is greater then the highScore we will update the highScore cell to match the currentScore 
+    // { currentScore: user.currentScore } before spread operation/initial state
+    // { currentScore: user.currentScore, highScore: user.highScore } spread highscore into object
+    db.User.update({ currentScore: user.currentScore, ...user.highScore ? { highScore: user.highScore } : null }, { where: { id: +req.body.id } }).then(()=> {
+      return res.json({ user: 'OK' })
+    }).catch(err => {
+      return res.status(422).json(err)
+    })
+  });
+
+  // get request on api highScore route
+  app.get("/api/highScore", (req, res) => {
+    // uses sequelize simple select queries
+    // https://sequelize.org/master/manual/model-querying-basics.html#simple-insert-queries
+    db.User.findAll({
+      // targets highScore in database where the value is not null
+      where: {
+        // https://sequelize.org/master/manual/model-querying-basics.html#applying-where-clauses
+        highScore: {
+          [Op.not]: null,
+        },
+      },
+      // limits the returned highScores to 10
+      // sets the highScore in descending order 
+      // https://sequelize.org/master/manual/model-querying-basics.html#ordering
+      limit: 10,
+      attributes: ['highScore', 'email'],
+      order: [
+        ['highScore', 'DESC']
+      ]
+    })
+    .then(response => {
+      return res.json(response)
+    })
+    .catch(err => {
+      return res.status(401).json(err);
+    })
+  })
 };
+
