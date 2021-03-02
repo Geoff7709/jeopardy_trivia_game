@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="row">
+  <div class="row emailHighScore">
     {{#each highScore}}
-        <div class="col-md-2 row">
-            <span>{{email}}</span>
-            <span>{{highScore}}</span>
+        <div class="col-md-6 row">
+            <span class="email">Email: {{email}}</span>
+            <span class="highScore">HighScore: {{highScore}}</span>
         </div>
     {{/each}}
   </div>
