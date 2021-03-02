@@ -2,7 +2,9 @@
   "development": {
     "username": "root",
 
-   "password": "12#root2021",
+
+   "password": null,
+
 
 
     "database": "jeopardy_game_db",
