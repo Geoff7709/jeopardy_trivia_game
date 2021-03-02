@@ -59,8 +59,23 @@ module.exports = function (app) {
     }
   });
 
+  // app.get("/api/gameBoard", (req, res) => {
+  //   const categoriesApiCall = "https://jservice.io/api/categories?count=6";
+  //   const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
+  //   axiosApiCall({ url: categoriesApiCall }).then(response => {
+  //     return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
+  //   }).then((response) => {
+  //     const payload = response.map(item => item.data)
+  //     return res.json(payload)
+  //   }).catch(err => {
+  //     return res.status(422).json(err)
+  //   })
+
+  // }); 
+
   app.get("/api/gameBoard", (req, res) => {
-    const categoriesApiCall = "https://jservice.io/api/categories?count=6";
+    const randomOffset = Math.floor(Math.random() * 18000);
+    const categoriesApiCall = `https://jservice.io/api/categories?offset=${randomOffset}&count=6`;
     const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
     axiosApiCall({ url: categoriesApiCall }).then(response => {
       return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
@@ -70,7 +85,6 @@ module.exports = function (app) {
     }).catch(err => {
       return res.status(422).json(err)
     })
-
   });
 
   app.post("/api/category", (req, res) => {
