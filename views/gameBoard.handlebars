@@ -1,6 +1,7 @@
 <div class="container gameBoard" data-user="{{user.id}}" data-highScore="{{user.highScore}}">
   <div class="row align-items-center Scgame">
-    <span>Score:</span>
+    <span id="timer"></span>
+    <span id="score">Score:</span>
     <span id="currentScore"></span>
   </div>
   <div class="board row">
@@ -10,7 +11,7 @@
       {{#each clues}}
       <div class="row clues">
         <form class="tile">
-            <a href="#target-{{id}}" data-toggle="modal" class="btn btn-secondary btn-primary btn-lg disabled-target-{{id}}" tabindex="-1" role="button" aria-disabled="true">{{value}}</a>
+            <a href="#target-{{id}}" data-toggle="modal" class="btn questionbtn btn-secondary btn-primary btn-lg disabled-target-{{id}}" tabindex="-1" role="button" aria-disabled="true">{{value}}</a>
         </form>
       </div>
       <div id="target-{{id}}" class="modal fade questionId" data-backdrop="static" data-category-id="{{category_id}}"
@@ -19,7 +20,6 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">{{title}}</h5>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
               <h2>Answer:</h2>
@@ -28,7 +28,7 @@
               <textarea id="questionSubmit"></textarea>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Pass</button>
+              <button type="button" class="btn btn-secondary btnPass" data-dismiss="modal">Pass</button>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Submit Question</button>
             </div>
           </div>
