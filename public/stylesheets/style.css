@@ -35,13 +35,20 @@
 }
   .head1{
   width: 40%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 35px;
 }
-  .head1 h1 {
+
+
+ .head1 h1 {
   color: #fff;
   font-size: 40px;
 }
+ 
 
   .container-fluid1 {
+
   min-height: 100px;
   margin-right: 0;
   margin-left: auto;
@@ -62,7 +69,7 @@
 }
 
  .Scgame{
-  color: white;
+  color: black;
   font-size: 30px;
   text-align: center;
 }
@@ -71,6 +78,9 @@ div.tile{
   font-size: 15px;
   align-items: center;
   margin-left: 0;
+
+  margin-top: 10px;
+
   margin-bottom: 20px;
   font-style: bold;
 }
@@ -130,24 +140,41 @@ a {
   background-color: #1D2D5C;
   margin: 0 auto;
   margin-top: 20px;
+
   padding: 20px;
+
   flex-direction: row;
   display: flex;
   justify-content:space-between;
   width: 96%;
   border-radius:10px;
+
+}
+
+.h12 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 35px;
+  text-align: center;
+
 }
 
  .div1 h1 {
   color: #ddd;
   font-size: 30px;
-  margin-left: 20px;
+
+  margin: 0 auto;
+ 
   padding-bottom: 15px; 
 }
 
  .loginBtn {
   margin-right: 20px;
+
   margin-bottom: 50px;
+
 }
 
  .loginBtn a {
@@ -161,7 +188,10 @@ a {
   width: 80px;
   border-radius: 50%;
   padding-top:20px; 
+
+
 }
+
 
   .btn {
   font-size: 20px;
@@ -309,6 +339,7 @@ a {
   .head1 h1 {
     color: #fff;
     font-size: 40px;
+
   }
   
   .container-fluid1 {
@@ -345,7 +376,10 @@ a {
 
 };
 
+  
+
   @media only screen and (max-width: 600px) {
+
   .div1, .div2, .div3, .div4 {
     display: flex;
     font-size: 20px;
@@ -388,7 +422,10 @@ a {
   }
 };
 
-@media only screen and (max-width: 425px) {
+
+@media only screen and (min-width: 425px) {
+
+
   .home {
     border: 1px gray solid;
     width: 96vw;
@@ -467,6 +504,4 @@ a {
 .board .row .tile.active .question-answer {
   display: block;
 }
-
-
 
