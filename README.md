@@ -32,6 +32,9 @@ The Alex Trebek Tribute Trivia Challenge utilizes one API that provides over 156
 
 * [jService](http://jservice.io//) - Thanks for the great API, Steve Ottenad! (@scottenad - https://github.com/sottenad)
 
+## Game Screenshot
+![jeopardy_trivia_game](./public/Images/gameboard_screenshot.png)
+
 ## Template Engine
 
 The application framework for this site is by [Handlebars](https://handlebarsjs.com/)
