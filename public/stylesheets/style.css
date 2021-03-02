@@ -15,8 +15,8 @@
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-  h1,h2, h3, h4, p {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  h1, h2, h3, h4, p {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: medium;
   text-align: center;
   font-weight: 800;
@@ -27,10 +27,9 @@
   .navbar {
   background-color: #000;
   min-height: 100px;
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: space-around;
 }
   .head1{
@@ -56,6 +55,10 @@
   padding-right: 15px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.topnav-right {
+  float: right;
 }
 
 .navbar-header {
@@ -128,7 +131,7 @@ a {
 .home {
   border: 1px gray solid;
   width: 96%;
- border-radius:10px ;
+  border-radius:10px ;
 }
 
 .bio, h4 {
@@ -145,8 +148,7 @@ a {
 
   flex-direction: row;
   display: flex;
-  justify-content:space-between;
-  width: 96%;
+  width: 75%;
   border-radius:10px;
 
 }
@@ -164,9 +166,8 @@ a {
  .div1 h1 {
   color: #ddd;
   font-size: 30px;
-
+  text-align: center; 
   margin: 0 auto;
- 
   padding-bottom: 15px; 
 }
 
@@ -179,7 +180,6 @@ a {
 
  .loginBtn a {
   font-size: 20px;
-
 }
 
  .mylogin {
@@ -191,7 +191,6 @@ a {
 
 
 }
-
 
   .btn {
   font-size: 20px;
@@ -221,7 +220,6 @@ a {
   margin-top: 20%;
   height: auto;
   border-radius:10px;
-  box-shadow: 10px 10px 5px grey;
 }
 
  .MyImg {
@@ -241,7 +239,7 @@ a {
     font-family: 'Courier New', Courier, monospace;
   }
 
-  .bio {
+  /* .bio {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: wheat;
     border: 1px gray solid;
@@ -254,7 +252,7 @@ a {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 30px;
   font-weight: 800;
-}
+} */
  
   .div4 {
   width: 96%;
@@ -300,6 +298,7 @@ a {
   div {
   text-align: center;
 }
+
   .Q {
   font-size: 35px;
   color: #fff;
@@ -336,6 +335,7 @@ a {
   .head1{
     width: 40%;
   }
+
   .head1 h1 {
     color: #fff;
     font-size: 40px;
@@ -400,7 +400,7 @@ a {
     font-size: 35px;
   }
 
-  .div3  {
+  .div3 {
     font-size: small;
     display: flex;
     flex-direction: column;
