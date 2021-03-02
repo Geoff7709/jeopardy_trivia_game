@@ -105,6 +105,7 @@ module.exports = function (app) {
 
       res.render('highScore', {
         highScore: resp.body,
+        user: req.user
       })
     })
   })
