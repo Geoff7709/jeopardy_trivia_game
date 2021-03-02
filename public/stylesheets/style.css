@@ -350,6 +350,21 @@ a {
 }
 
 
+/* ***************** Highscore ********************** */
+.emailHighScore {
+  display: flex;
+  justify-content: space-between;
+  background: #1779ba;
+  color: white;
+}
+
+.email, .highScore {
+  background: white;
+  color: black;
+  border-radius: 5px;
+  padding: 2.5px 5px;
+}
+
   @media only screen and (min-width:995px){
   .board .row {
     flex-direction: row;
