@@ -15,8 +15,8 @@
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-  h1,h2, h3, h4, p {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  h1, h2, h3, h4, p {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: medium;
   text-align: center;
   font-weight: 800;
@@ -27,21 +27,27 @@
   .navbar {
   background-color: #000;
   min-height: 100px;
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: space-around;
 }
   .head1{
   width: 40%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 35px;
 }
-  .head1 h1 {
+
+
+ .head1 h1 {
   color: #fff;
   font-size: 40px;
 }
+ 
 
   .container-fluid1 {
+
   min-height: 100px;
   margin-right: 0;
   margin-left: auto;
@@ -49,6 +55,10 @@
   padding-right: 15px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.topnav-right {
+  float: right;
 }
 
 .navbar-header {
@@ -62,7 +72,7 @@
 }
 
  .Scgame{
-  color: white;
+  color: black;
   font-size: 30px;
   text-align: center;
 }
@@ -71,6 +81,9 @@ div.tile{
   font-size: 15px;
   align-items: center;
   margin-left: 0;
+
+  margin-top: 10px;
+
   margin-bottom: 20px;
   font-style: bold;
 }
@@ -118,7 +131,8 @@ a {
 .home {
   border: 1px gray solid;
   width: 96%;
- border-radius:10px ;
+  border-radius:10px ;
+
 }
 
 .bio, h4 {
@@ -130,29 +144,44 @@ a {
   background-color: #1D2D5C;
   margin: 0 auto;
   margin-top: 20px;
+
   padding: 20px;
+
   flex-direction: row;
   display: flex;
-  justify-content:space-between;
-  width: 96%;
+  width: 75%;
   border-radius:10px;
+
+}
+
+.h12 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 35px;
+  text-align: center;
+
 }
 
  .div1 h1 {
   color: #ddd;
   font-size: 30px;
-  margin-left: 20px;
+  text-align: center; 
+  margin: 0 auto;
   padding-bottom: 15px; 
 }
 
  .loginBtn {
   margin-right: 20px;
   margin-bottom: 50px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
  .loginBtn a {
   font-size: 20px;
-
 }
 
  .mylogin {
@@ -161,6 +190,8 @@ a {
   width: 80px;
   border-radius: 50%;
   padding-top:20px; 
+
+
 }
 
   .btn {
@@ -188,10 +219,10 @@ a {
 
  img {
   width: 75%;
-  margin-top: 20%;
+  margin-top: 12%;
+  margin-bottom: 12%;
   height: auto;
   border-radius:10px;
-  box-shadow: 10px 10px 5px grey;
 }
 
  .MyImg {
@@ -211,7 +242,7 @@ a {
     font-family: 'Courier New', Courier, monospace;
   }
 
-  .bio {
+  /* .bio {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: wheat;
     border: 1px gray solid;
@@ -224,7 +255,7 @@ a {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 30px;
   font-weight: 800;
-}
+} */
  
   .div4 {
   width: 96%;
@@ -270,6 +301,7 @@ a {
   div {
   text-align: center;
 }
+
   .Q {
   font-size: 35px;
   color: #fff;
@@ -306,9 +338,11 @@ a {
   .head1{
     width: 40%;
   }
+
   .head1 h1 {
     color: #fff;
     font-size: 40px;
+
   }
   
   .container-fluid1 {
@@ -344,8 +378,9 @@ a {
   }
 
 };
+  
+ @media only screen and (max-width: 600px) {
 
-  @media only screen and (max-width: 600px) {
   .div1, .div2, .div3, .div4 {
     display: flex;
     font-size: 20px;
@@ -366,7 +401,7 @@ a {
     font-size: 35px;
   }
 
-  .div3  {
+  .div3 {
     font-size: small;
     display: flex;
     flex-direction: column;
@@ -388,7 +423,8 @@ a {
   }
 };
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 425px) {
+
   .home {
     border: 1px gray solid;
     width: 96vw;
@@ -467,6 +503,4 @@ a {
 .board .row .tile.active .question-answer {
   display: block;
 }
-
-
 
