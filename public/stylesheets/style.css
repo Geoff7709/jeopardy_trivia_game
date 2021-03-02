@@ -60,14 +60,14 @@
 
  .navbar-header {
   float: right;
-  /* margin: 20px 0px 10px; */
+  margin: 20px 0px 10px;
 }
 
  .navbar-header a {
   color:white;
   font-style: bold;
-  /* margin: 20px;
-  margin-top: 40px; */
+  margin: 20px;
+  margin-top: 40px;
 }
 
  .Scgame{
