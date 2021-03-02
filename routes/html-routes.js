@@ -77,7 +77,6 @@ module.exports = function (app) {
     // If the user already has an account send them to the members page
     // if a user is signup or logged in then render user to gamePlay page and user isAuthenticated added
     const { type = 'single' } = req.query
-    console.log(type);
     req.uest({
       method: 'GET',
       url: '/api/gameBoard',
@@ -90,7 +89,22 @@ module.exports = function (app) {
       res.render('gameBoard', {
         object: body,
         user: req.user
+      })
+    })
+  })
 
+  app.get("/highScore", isAuthenticated, (req, res) => {
+
+    req.uest({
+      method: 'GET',
+      url: '/api/highScore',
+    }, (er, resp) => {
+      if (er) {
+        return res.render('login')
+      }
+
+      res.render('highScore', {
+        highScore: resp.body,
       })
     })
   })
