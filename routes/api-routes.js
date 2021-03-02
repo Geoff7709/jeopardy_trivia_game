@@ -1,12 +1,12 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const axios = require('axios');
+const axios = require("axios");
 const { Op } = require("sequelize");
 
 const axiosApiCall = (data) => {
   return axios(data)
-}
+};
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -59,6 +59,7 @@ module.exports = function (app) {
     }
   });
 
+  // This segment of code is the route to api/gameBoard without the randomness; meant for checking the json data and for any grading/presentation
   // app.get("/api/gameBoard", (req, res) => {
   //   const categoriesApiCall = "https://jservice.io/api/categories?count=6";
   //   const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
@@ -70,7 +71,6 @@ module.exports = function (app) {
   //   }).catch(err => {
   //     return res.status(422).json(err)
   //   })
-
   // }); 
 
   app.get("/api/gameBoard", (req, res) => {
@@ -80,30 +80,30 @@ module.exports = function (app) {
     axiosApiCall({ url: categoriesApiCall }).then(response => {
       return Promise.all(response.data.map(item => axiosApiCall({ url: categoryApiCall(item.id) })));
     }).then((response) => {
-      const payload = response.map(item => item.data)
-      return res.json(payload)
+      const payload = response.map(item => item.data);
+      return res.json(payload);
     }).catch(err => {
-      return res.status(422).json(err)
-    })
+      return res.status(422).json(err);
+    });
   });
 
   app.post("/api/category", (req, res) => {
-    const { id, category_id, answer } = req.body
+    const { id, category_id, answer } = req.body;
     const categoryApiCall = (arg) => `https://jservice.io/api/category?id=${arg}`;
     axiosApiCall({ url: categoryApiCall(category_id) })
       .then((response) => {
         const currentClue = response.data.clues.find(element => element.id === id);
-        const checkAnswer = currentClue.answer.includes(answer)
-        return res.json({ checkAnswer })
+        const checkAnswer = currentClue.answer.includes(answer);
+        return res.json({ checkAnswer });
       }).catch(err => {
-        return res.status(422).json(err)
-      })
+        return res.status(422).json(err);
+      });
   });
 
   app.post("/api/currentScore", (req, res) => {
     // destructuring currentScore and highScore from the resquest
     // and saving it to the request body.
-    const { currentScore = null, highScore = null } = req.body
+    const { currentScore = null, highScore = null } = req.body;
     // creating a user object with the currentScore and highScore null
     let user = {
       currentScore: null,
@@ -124,11 +124,11 @@ module.exports = function (app) {
     // when currentScore is greater then the highScore we will update the highScore cell to match the currentScore 
     // { currentScore: user.currentScore } before spread operation/initial state
     // { currentScore: user.currentScore, highScore: user.highScore } spread highscore into object
-    db.User.update({ currentScore: user.currentScore, ...user.highScore ? { highScore: user.highScore } : null }, { where: { id: +req.body.id } }).then(()=> {
-      return res.json({ user: 'OK' })
+    db.User.update({ currentScore: user.currentScore, ...user.highScore ? { highScore: user.highScore } : null }, { where: { id: +req.body.id } }).then(() => {
+      return res.json({ user: "OK" });
     }).catch(err => {
-      return res.status(422).json(err)
-    })
+      return res.status(422).json(err);
+    });
   });
 
   // get request on api highScore route
@@ -147,17 +147,16 @@ module.exports = function (app) {
       // sets the highScore in descending order 
       // https://sequelize.org/master/manual/model-querying-basics.html#ordering
       limit: 10,
-      attributes: ['highScore', 'email'],
+      attributes: ["highScore", "email"],
       order: [
-        ['highScore', 'DESC']
+        ["highScore", "DESC"]
       ]
     })
-    .then(response => {
-      return res.json(response)
-    })
-    .catch(err => {
-      return res.status(401).json(err);
-    })
-  })
+      .then(response => {
+        return res.json(response);
+      })
+      .catch(err => {
+        return res.status(401).json(err);
+      });
+  });
 };
-

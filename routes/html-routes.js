@@ -1,7 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 
-
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -17,19 +16,15 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/members");
       // res.redirect("/gamePlay");
-
     };
-
     res.render('signup');
   });
-
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
       // res.redirect("/gamePlay");
-
     };
     res.render('login');
   });
@@ -37,15 +32,14 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.render('members', {
+    res.render("members", {
       user: req.user
     });
   });
   app.get("/gamePlay", isAuthenticated, (req, res) => {
     // If the user already has an account send them to the members page
     // if a user is signup or logged in then render user to gamePlay page and user isAuthenticated added
-
-    res.render('gamePlay', {
+    res.render("gamePlay", {
       user: req.user
     });
   });
@@ -57,56 +51,54 @@ module.exports = function (app) {
     const payload = (item, queryType) => {
       return item.reduce((acc, curr, indexValue) => {
         if (acc.length < 5) {
-          curr.value = (indexValue + 1) * queryType
-          acc.push(curr)
-          return acc
+          curr.value = (indexValue + 1) * queryType;
+          acc.push(curr);
+          return acc;
         }
-        return acc
+        return acc;
       }, [])
-    }
+    };
 
     // transforming array of categories
     // creates a copy of categories
     // returns a new copy of clues ( up to five ) for each category
     const categories = (queryType, data) => data.map(item => {
-      return Object.assign({}, item, { clues: payload(item.clues, queryType) })
-    })
+      return Object.assign({}, item, { clues: payload(item.clues, queryType) });
+    });
 
     // manually setting values for single and double jeopardy
-    const query = { single: 100, double: 200 }
+    const query = { single: 100, double: 200 };
     // If the user already has an account send them to the members page
     // if a user is signup or logged in then render user to gamePlay page and user isAuthenticated added
-    const { type = 'single' } = req.query
+    const { type = "single" } = req.query;
     req.uest({
-      method: 'GET',
-      url: '/api/gameBoard',
+      method: "GET",
+      url: "/api/gameBoard",
       body: { type }
     }, (er, resp) => {
       if (er) {
-        return res.render('login')
+        return res.render("login")
       }
       const body = categories(query[type], resp.body)
-      res.render('gameBoard', {
+      res.render("gameBoard", {
         object: body,
         user: req.user
-      })
-    })
-  })
+      });
+    });
+  });
 
   app.get("/highScore", isAuthenticated, (req, res) => {
-
     req.uest({
-      method: 'GET',
-      url: '/api/highScore',
+      method: "GET",
+      url: "/api/highScore",
     }, (er, resp) => {
       if (er) {
-        return res.render('login')
+        return res.render("login")
       }
-
-      res.render('highScore', {
+      res.render("highScore", {
         highScore: resp.body,
         user: req.user
-      })
-    })
-  })
+      });
+    });
+  });
 };
