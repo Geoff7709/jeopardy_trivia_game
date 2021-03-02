@@ -30,7 +30,6 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: space-around;
 }
   .head1{
@@ -66,7 +65,6 @@
 }
 
  .Scgame{
-  color: white;
   color: black;
   font-size: 30px;
   text-align: center;
@@ -124,7 +122,7 @@ a {
 .home {
   border: 1px gray solid;
   width: 96%;
- border-radius:10px ;
+ border-radius:10px;
 }
 
 .bio, h4 {
@@ -136,7 +134,7 @@ a {
   background-color: #1D2D5C;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 10px;
+  padding: 20px;
   flex-direction: row;
   display: flex;
   justify-content:space-between;
@@ -158,7 +156,6 @@ a {
   color: #ddd;
   font-size: 30px;
   margin: 0 auto;
-  /* margin-left: 20px; */
   padding-bottom: 15px; 
 }
 
@@ -208,7 +205,6 @@ a {
   margin-top: 20%;
   height: auto;
   border-radius:10px;
-  box-shadow: 10px 10px 5px grey;
 }
 
  .MyImg {
@@ -228,7 +224,7 @@ a {
     font-family: 'Courier New', Courier, monospace;
   }
 
-  .bio {
+  /* .bio {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: wheat;
     border: 1px gray solid;
@@ -241,7 +237,7 @@ a {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 30px;
   font-weight: 800;
-}
+} */
  
   .div4 {
   width: 96%;
@@ -362,7 +358,7 @@ a {
   }
 };
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (max-width: 600px) {
   .div1, .div2, .div3, .div4 {
     display: flex;
     font-size: 20px;
@@ -405,7 +401,7 @@ a {
   }
 };
 
-@media only screen and (min-width: 425px) {
+@media only screen and (max-width: 425px) {
   .home {
     border: 1px gray solid;
     width: 96vw;
