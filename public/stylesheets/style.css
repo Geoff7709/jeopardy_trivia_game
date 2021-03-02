@@ -174,9 +174,10 @@ a {
 
  .loginBtn {
   margin-right: 20px;
-
   margin-bottom: 50px;
-
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
  .loginBtn a {
@@ -421,7 +422,7 @@ a {
   }
 };
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 425px) {
 
   .home {
     border: 1px gray solid;
