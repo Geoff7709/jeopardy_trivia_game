@@ -132,6 +132,7 @@ a {
   border: 1px gray solid;
   width: 96%;
   border-radius:10px ;
+
 }
 
 .bio, h4 {
@@ -375,10 +376,8 @@ a {
   }
 
 };
-
   
-
-  @media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 600px) {
 
   .div1, .div2, .div3, .div4 {
     display: flex;
@@ -422,9 +421,7 @@ a {
   }
 };
 
-
-@media only screen and (min-width: 425px) {
-
+@media only screen and (max-width: 425px) {
 
   .home {
     border: 1px gray solid;
