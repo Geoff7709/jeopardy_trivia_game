@@ -39,15 +39,12 @@
   font-size: 35px;
 }
 
-
  .head1 h1 {
   color: #fff;
   font-size: 40px;
 }
  
-
-  .container-fluid1 {
-
+ .container-fluid1 {
   min-height: 100px;
   margin-right: 0;
   margin-left: auto;
@@ -57,18 +54,20 @@
   flex-wrap: wrap;
 }
 
-.topnav-right {
+ .topnav-right {
   float: right;
 }
 
-.navbar-header {
+ .navbar-header {
   float: right;
+  /* margin: 20px 0px 10px; */
 }
 
-.navbar-header a {
+ .navbar-header a {
   color:white;
   font-style: bold;
-  margin: 20px;
+  /* margin: 20px;
+  margin-top: 40px; */
 }
 
  .Scgame{
@@ -76,14 +75,13 @@
   font-size: 30px;
   text-align: center;
 }
-div.tile{
+
+ div.tile{
   color: white;
   font-size: 15px;
   align-items: center;
   margin-left: 0;
-
   margin-top: 10px;
-
   margin-bottom: 20px;
   font-style: bold;
 }
@@ -108,7 +106,7 @@ div.tile{
   margin: 0 auto;
 }
 
-form {
+ form {
   line-height: normal;
   margin-top: 10px;
 }
@@ -128,33 +126,30 @@ a {
   color:black;
 }
 /* ***************** HOME ********************** */
-.home {
+ .home {
   border: 1px gray solid;
   width: 96%;
   border-radius:10px ;
 
 }
 
-.bio, h4 {
+ .bio, h4 {
   font-size: 30px;
   color:black;
 }
 
-.div1 {
+ .div1 {
   background-color: #1D2D5C;
   margin: 0 auto;
   margin-top: 20px;
-
   padding: 20px;
-
   flex-direction: row;
   display: flex;
   width: 75%;
   border-radius:10px;
-
 }
 
-.h12 {
+ .h12 {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -190,8 +185,6 @@ a {
   width: 80px;
   border-radius: 50%;
   padding-top:20px; 
-
-
 }
 
   .btn {
@@ -304,10 +297,17 @@ a {
 
   .Q {
   font-size: 35px;
-  color: #fff;
+  /* color: #fff; */
+  color: black;
 }
 
-.navgate  {
+ #single, #double{
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+ .navgate  {
   justify-content: center;
   width: 60%;
   display: flex;
@@ -326,7 +326,6 @@ a {
   .categories {
     display: table-row;
     font-size: 20px;
-  
   }
 };
 
@@ -342,7 +341,6 @@ a {
   .head1 h1 {
     color: #fff;
     font-size: 40px;
-
   }
   
   .container-fluid1 {
@@ -363,7 +361,6 @@ a {
   .navbar-header a {
     color:white;
     font-style: bold;
-    
   }
   .navgate  {
     width: 60%;
@@ -376,11 +373,9 @@ a {
     font-style: bold;
     margin-left: 20px;
   }
-
 };
   
  @media only screen and (max-width: 600px) {
-
   .div1, .div2, .div3, .div4 {
     display: flex;
     font-size: 20px;
@@ -424,7 +419,6 @@ a {
 };
 
 @media only screen and (min-width: 425px) {
-
   .home {
     border: 1px gray solid;
     width: 96vw;
@@ -434,7 +428,6 @@ a {
   .div1 {
     display: flex;
     flex-direction: column;
-
   }
 };
 
